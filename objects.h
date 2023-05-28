@@ -3,13 +3,13 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include "procedures.h"
 #include "sqlite\sqlite3.h"
 namespace obj_r {
-void read_db();
 class MainSettings{
+    // главные настройки
     public:
-    static bool SETTING_TIME;
-
+    static std::string DBASE_FOLDER;
 };
 
 

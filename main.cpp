@@ -4,12 +4,11 @@
 #include "objects.h"
 
 // global settings
-bool obj_r::MainSettings::SETTING_TIME = 0;
+std::string obj_r::MainSettings::DBASE_FOLDER = "..\\refsystem\\db";
 
 // end global settings
 int main(int argc, char *argv[])
 {
-    obj_r::read_db();
     QApplication a(argc, argv);
     Widget w;
     w.show();

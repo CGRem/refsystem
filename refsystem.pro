@@ -13,6 +13,7 @@ SOURCES += \
     main.cpp \
     objects.cpp \
     procedures.cpp \
+    settings.cpp \
     sqlite/sqlite3.c \
     widget.cpp
 
@@ -20,11 +21,16 @@ HEADERS += \
     functions.h \
     objects.h \
     procedures.h \
+    settings.h \
     sqlite/sqlite3.h \
     widget.h
 
 FORMS += \
+    settings.ui \
     widget.ui
+	
+RESOURCES +=
+RC_FILE = connect_ico.rc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

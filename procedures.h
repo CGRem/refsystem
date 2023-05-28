@@ -7,6 +7,7 @@
 #include "ui_widget.h"
 
 namespace proc_r {
+int primary_start(Ui::Widget* ui); // первичный запуск, чтение настроек, установка старт. парам
 
 } // proc_r
 #endif // PROCEDURES_H

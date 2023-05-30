@@ -13,3 +13,10 @@ settings::~settings()
 {
     delete ui;
 }
+
+void settings::on_btn_opendirbase_clicked()
+{
+    QString path_dir = QFileDialog::getExistingDirectory(this, "открыть папку с базами", "..//");
+    ui->lbl_pathdirbase->setText(path_dir);
+}
+

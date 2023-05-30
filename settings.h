@@ -2,6 +2,7 @@
 #define SETTINGS_H
 
 #include <QDialog>
+#include <QFileDialog>
 #include "widget.h"
 
 namespace Ui {
@@ -16,6 +17,9 @@ public:
     explicit settings(Ui::Widget *mw, QWidget *parent = nullptr);
     Ui::Widget*  settings_mw;
     ~settings();
+
+private slots:
+    void on_btn_opendirbase_clicked();
 
 private:
     Ui::settings *ui;

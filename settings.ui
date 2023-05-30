@@ -16,16 +16,36 @@
   <property name="windowTitle">
    <string>Настройки</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="res_ico.qrc">
-    <normaloff>:/buttons/reset/mainico_64.ico</normaloff>:/buttons/reset/mainico_64.ico</iconset>
-  </property>
   <property name="modal">
    <bool>false</bool>
   </property>
+  <widget class="QPushButton" name="btn_opendirbase">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>250</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>open_dir</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_pathdirbase">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>331</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>path</string>
+   </property>
+  </widget>
  </widget>
- <resources>
-  <include location="res_ico.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

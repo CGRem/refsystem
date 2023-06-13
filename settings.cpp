@@ -17,6 +17,10 @@ settings::~settings()
 void settings::on_btn_opendirbase_clicked()
 {
     QString path_dir = QFileDialog::getExistingDirectory(this, "открыть папку с базами", "..//");
-    ui->lbl_pathdirbase->setText(path_dir);
+
+    std::string standart_path;
+    func_r::to_standart_path(standart_path, path_dir);
+    QString to_set = QString::fromStdString(standart_path);
+    ui->lbl_pathdirbase->setText(to_set);
 }
 

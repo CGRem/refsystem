@@ -7,12 +7,7 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    if(proc_r::primary_start(ui)){
-        qDebug() << "файл настроек не удалось записать";
-    }
-    QString str = QString::fromStdString(obj_r::MainSettings::DBASE_FOLDER);
-    qDebug() << str;
-
+    proc_r::primary_start(ui);
 }
 
 Widget::~Widget()

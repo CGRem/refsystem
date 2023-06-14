@@ -35,7 +35,7 @@ int to_standart_path(std::string& path_Str, const QString& path_QStr){
     int length_path = path_QStr.length();
     for (int index = 0; index < length_path; index++){
         if (path_QStr[index] == "/"){
-            path_standart_QStr += "\\\\";
+            path_standart_QStr += "\\";
         }
         else {
             path_standart_QStr += path_QStr[index];

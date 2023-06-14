@@ -19,7 +19,7 @@ public:
     ~settings();
 
 private slots:
-    void on_btn_opendirbase_clicked();
+    void on_btn_setopendir_clicked();
 
 private:
     Ui::settings *ui;

@@ -136,7 +136,7 @@
             <number>2</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_2">
+            <widget class="QLabel" name="lbl_maincheckpath">
              <property name="minimumSize">
               <size>
                <width>24</width>
@@ -158,7 +158,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_4">
+            <widget class="QLabel" name="lbl_mainpath">
              <property name="text">
               <string>path_with_base_data</string>
              </property>

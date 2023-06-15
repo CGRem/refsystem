@@ -8,6 +8,7 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     proc_r::primary_start(ui);
+    proc_r::set_main_interface(ui);
 }
 
 Widget::~Widget()

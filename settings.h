@@ -21,6 +21,8 @@ public:
 private slots:
     void on_btn_setopendir_clicked();
 
+    void on_btn_savesettings_clicked();
+
 private:
     Ui::settings *ui;
 };

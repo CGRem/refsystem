@@ -10,6 +10,7 @@ class MainSettings{
     // главные настройки
     public:
     static std::string DBASE_FOLDER;
+    static std::string DBASE_FOLDER_SET;
 };
 
 

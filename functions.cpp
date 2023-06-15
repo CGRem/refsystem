@@ -15,7 +15,6 @@ int write_mainsettings(){
     }
     else {return 1;} // не удалось создать файл
 }
-
 int read_mainsettings(){
     std::ifstream file_settings_Ifs;
     file_settings_Ifs.open("settings.bin", std::ios::out | std::ios::binary);
@@ -45,6 +44,12 @@ int to_standart_path(std::string& path_Str, const QString& path_QStr){
     path_Str = path_standart_QStr.toStdString();
     qDebug() << path_standart_QStr;
     return 0;
+}
+bool check_folder_exists(const std::string& path_folder_Str){
+    DWORD attrib_DW = GetFileAttributesA(path_folder_Str.c_str());
+    if (attrib_DW == INVALID_FILE_ATTRIBUTES){return 1;}
+    else {return 0;}
+    return 1;
 }
 
 } // func_r

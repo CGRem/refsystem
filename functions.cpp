@@ -53,10 +53,13 @@ bool check_folder_exists(const std::string& path_folder_Str){
 //    if (attrib_DW == INVALID_FILE_ATTRIBUTES){return 1;}
 //    else {return 0;}
 //    return 0;
-    std::wstring path_folder_Wstr;
-    path_folder_Wstr.assign(path_folder_Str.begin(), path_folder_Str.end());
-    if (PathFileExistsW(path_folder_Wstr.c_str())){ return 0; }
-    else{ return 1; }
+//    if (!PathIsDirectoryA(path_folder_Str.c_str())){ return 1; }
+    if (!QDir(QString::fromStdString(path_folder_Str)).exists()){ return 1; }
+
+//    std::wstring path_folder_Wstr;
+//    path_folder_Wstr.assign(path_folder_Str.begin(), path_folder_Str.end());
+//    if (PathFileExistsW(path_folder_Wstr.c_str())){ return 0; }
+//    else{ return 1; }
     return 0;
 }
 

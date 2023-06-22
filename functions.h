@@ -3,6 +3,7 @@
 #include "objects.h"
 #include <QWidget>
 #include <windows.h>
+#include <Shlwapi.h>
 
 namespace func_r {
 int write_mainsettings(); // запись на диск главных настроек

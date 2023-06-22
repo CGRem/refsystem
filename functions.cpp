@@ -2,7 +2,7 @@
 namespace func_r {
 int write_mainsettings(){
     std::ofstream file_settings_Ofs;
-    file_settings_Ofs.open("settings.bin", std::ios::out | std::ios::binary);
+    file_settings_Ofs.open("settings.bin", std::ios::out);
     if (file_settings_Ofs.is_open()){
         std::string pathbase_Str = obj_r::MainSettings::DBASE_FOLDER;
         int length_path_Int = pathbase_Str.length();
@@ -17,13 +17,15 @@ int write_mainsettings(){
 }
 int read_mainsettings(){
     std::ifstream file_settings_Ifs;
-    file_settings_Ifs.open("settings.bin", std::ios::out | std::ios::binary);
+    file_settings_Ifs.open("settings.bin", std::ios::in);
     if (file_settings_Ifs.is_open()){
         int length_path_Int = 0;
         file_settings_Ifs.read((char*)&length_path_Int, sizeof(int));
-        char pathbase_Chr[length_path_Int];
+        char pathbase_Chr[length_path_Int + 1];
         file_settings_Ifs.read(pathbase_Chr, length_path_Int * sizeof(char));
         file_settings_Ifs.close();
+        pathbase_Chr[length_path_Int] = '\0';
+        qDebug() << pathbase_Chr << "read";
         obj_r::MainSettings::DBASE_FOLDER = std::string(pathbase_Chr);
         return 0;
     }
@@ -46,10 +48,16 @@ int to_standart_path(std::string& path_Str, const QString& path_QStr){
     return 0;
 }
 bool check_folder_exists(const std::string& path_folder_Str){
-    DWORD attrib_DW = GetFileAttributesA(path_folder_Str.c_str());
-    if (attrib_DW == INVALID_FILE_ATTRIBUTES){return 1;}
-    else {return 0;}
-    return 1;
+//    qDebug() << path_folder_Str.c_str() << "check";
+//    DWORD attrib_DW = GetFileAttributesA(path_folder_Str.c_str());
+//    if (attrib_DW == INVALID_FILE_ATTRIBUTES){return 1;}
+//    else {return 0;}
+//    return 0;
+    std::wstring path_folder_Wstr;
+    path_folder_Wstr.assign(path_folder_Str.begin(), path_folder_Str.end());
+    if (PathFileExistsW(path_folder_Wstr.c_str())){ return 0; }
+    else{ return 1; }
+    return 0;
 }
 
 } // func_r
